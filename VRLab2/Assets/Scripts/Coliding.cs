@@ -7,31 +7,31 @@ using UnityEngine.Events;
 public class Coliding : MonoBehaviour
 {
     [SerializeField]
-    private GameObject ball;
+    private GameManger manager;
 
     [SerializeField]
     private UnityEvent onTriggerExit;
+
+    private ParticleSystem effect;
 
     private void Start()
     {
         if (onTriggerExit == null)
             onTriggerExit = new UnityEvent();
+        effect = GetComponentInChildren<ParticleSystem>();
     }
 
-
-    Vector3 spawnPoint = new Vector3(-5, 0.2f, -0.017f);
-    IEnumerator Goal()
-    { 
+    IEnumerator Goal(GameObject ball)
+    {
+        effect.Play();
         yield return new WaitForSeconds(2);
-        ball.transform.position = spawnPoint;
-        ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        ball.GetComponent<Rigidbody>().angularVelocity= Vector3.zero;
+        effect.Stop();
+        manager.RespawnBall(ball);
     }
 
     void OnTriggerExit(Collider other)
     {
-        StartCoroutine(Goal());
+        StartCoroutine(Goal(other.gameObject));
         onTriggerExit.Invoke();
-        
     }
 }
