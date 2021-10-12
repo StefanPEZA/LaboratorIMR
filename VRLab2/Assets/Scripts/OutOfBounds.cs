@@ -17,7 +17,6 @@ public class OutOfBounds : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("aha");
         StartCoroutine(Respawn(other.gameObject));
     }
 }

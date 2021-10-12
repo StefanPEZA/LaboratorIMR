@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManger : MonoBehaviour
@@ -10,7 +11,7 @@ public class GameManger : MonoBehaviour
     [SerializeField]
     private GameObject ball;
 
-    public TextMesh scoreObject;
+    public TextMeshPro scoreObject;
     public Transform spawnPoint;
 
     public void RespawnBall(GameObject ball)
@@ -33,6 +34,6 @@ public class GameManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.scoreObject.text = string.Format("{0:000}", this.score);
+        this.scoreObject.SetText(string.Format("{0:000}", this.score));
     }
 }
