@@ -1,17 +1,24 @@
 fileFormatVersion: 2
-guid: 23cde6c681c9e7742913f4b48fc4f0d2
+guid: 980395b25ec6fd046a5ea6348c266dbf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  externalObjects:
+      74: 4988808869720168840
+    second: Armature|GrabAction
   - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: skin
-    second: {fileID: 2800000, guid: d17fd8e1ae846be48bf6ef04ba675c2c, type: 3}
+      74: -2285041288970730795
+    second: Armature|GrabAction.002
+  - first:
+      74: 732391451366026302
+    second: Armature|IdleAction
+  - first:
+      74: -2544252923758651692
+    second: Armature|IdleAction.001
+  - first:
+      74: 4006852307127066
+    second: Armature|IdleAction.002
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
