@@ -16,9 +16,12 @@ public class GameManger : MonoBehaviour
 
     public void RespawnBall(GameObject ball)
     {
-        ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        ball.transform.position = spawnPoint.position;
+        if (ball == this.ball)
+        {
+            ball.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            ball.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            ball.transform.position = spawnPoint.position;
+        }
     }
 
     public void ResetScore()

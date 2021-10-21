@@ -15,7 +15,7 @@ public class OutOfBounds : MonoBehaviour
         manager.RespawnBall(ball);
     }
 
-    void OnTriggerExit(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         StartCoroutine(Respawn(other.gameObject));
     }
